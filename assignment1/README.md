@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+## Assignment Prompt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Build a Blog app using React with the following features
+Login in and Sign up
+Since we have no backend, a simple validation of input text equal to password will be good enough
+Session doesn’t have to be stored (You can persist session using LocalStorage, but that is extra work)
+A view with all blog posts (The blog post view should show a small part of the text and show the full text on clicking the component, or a ‘View Full Post’ button
+Add a Blog post
+Each post should have a title, content, author, date of addition
+Each post should have a number of upvotes and downvotes (with a button to increment and decrement the vote counts
+Each post should be editable and deletable
+
+
 
 ## Available Scripts
 

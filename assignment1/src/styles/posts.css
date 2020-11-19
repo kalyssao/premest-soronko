@@ -1,0 +1,49 @@
+.homeDiv {
+    margin: 0 auto;
+    width: 75%;
+    padding: 5%
+}
+
+label {
+    margin-bottom: 10%;
+}
+
+input {
+    width: 80%;
+}
+
+textarea {
+    width: 80%;
+    margin-top: 3%;
+    height: 300px;
+    resize: none;
+}
+
+.postButton {
+    padding: 15px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    border: none;
+    color: black;
+    background-color: #D3D3D3;
+}
+
+.titleInput {
+    margin-top: 10px;
+}
+
+.sentiment-container {
+    margin-bottom: 10px;
+}
+
+.like {
+    color: green;
+}
+
+.dislike {
+    color: red;
+}
+
+ul {
+    padding: 0;
+}

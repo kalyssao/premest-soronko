@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import NewPost from '../components/NewPost'
 import AllPosts from '../components/AllPosts'
 import {v1 as uuid} from 'uuid'
+import '../styles/posts.css'
 
 export default function Home() {
     const [ title , setTitle] = useState('')
     const [ content , setContent] = useState('')
-    const [ post, setPost ] = useState([])
+    const [ posts, setPosts ] = useState([])
 
     const handlePost = (title, content) => {
-        setPost([
-            ...post, 
+        setPosts([
+            ...posts, 
             { 
                 id: uuid(),
                 title: title, 
@@ -36,9 +37,9 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className="homeDiv">
             <NewPost title={title} content={content} handlePost={handlePost} handleChange={handleChange} />
-            <AllPosts posts={post}/>
+            <AllPosts posts={posts}/>
         </div>
     )
 }

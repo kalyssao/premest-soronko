@@ -1,14 +1,18 @@
 import React from 'react'
+import Post from './Post'
 
 export default function AllPosts({ posts }) {
+    /*function truncateText(someText) {
+        if (someText.length > 30) {
+        }
+    }*/
+
     return (
-        <div>
+        <div className="allPosts">
             <h3>All Posts</h3>
-            <ul>
-                {posts.map(item => {
-                    <li key={item.id}>{item.title}, {item.content}</li>
-                })}
-            </ul>
+            <ul className="postList">
+                {posts.map(post => (<Post key={post.id} /*truncatedPost={truncateText(post)}*/ post={post} />))}
+            </ul> 
         </div>
     )
 }

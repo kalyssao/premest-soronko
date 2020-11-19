@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../styles/posts.css'
 
 export default function NewPost({ title, content, handlePost, handleChange }) {
 
@@ -10,24 +10,26 @@ export default function NewPost({ title, content, handlePost, handleChange }) {
 
     return (
         <div className="newPost">
-            <h3>New post</h3>
+            <h3 className="title">New post</h3>
             <form onSubmit={handleSubmit}>
 
                 <label>Title: </label>
+                <br/>
                 <input type="text" 
+                className="titleInput"
                 name="title"
                 value={title || ""} 
                 onChange={(e) => handleChange(e)}/>
                 <br/>
                 
-                <input 
+                <textarea 
                 type="text" 
                 name="content"
                 value={content || ""}
                 placeholder="Enter your post here"
                 onChange={(e) =>  handleChange(e)}/>
                 <br/>
-                <button>Post Blog!</button>
+                <button className="postButton">Post Blog!</button>
             </form>
         </div>
     )

@@ -1,4 +1,5 @@
 import {useState, React} from 'react'
+import '../styles/posts.css'
 
 export default function LikeDislike() {
     const [likes, setLikes] = useState(0)
@@ -13,9 +14,9 @@ export default function LikeDislike() {
     }
 
     return (
-        <div>
-            <button onClick={handleLikes}>Like </button> {likes}
-            <button onClick={handleDislikes}>Dislike</button> {dislikes}
+        <div className="sentiment-container">
+            <button className="like" onClick={handleLikes}>Like {likes} </button> 
+            <button className="dislike" onClick={handleDislikes}>Dislike {dislikes}</button> 
 
         </div>
     )

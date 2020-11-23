@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 
-export default function LoginForm() {
+export default function LoginForm({ handleSubmit }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+    
     const handleEmailChange = (event) => {
         setEmail(event.target.value)
     }
@@ -16,21 +15,24 @@ export default function LoginForm() {
     const handleLogin = (event) => {
         event.preventDefault()
         if(email === "kalyssa@gmail.com" && password === "test"){
-            setIsLoggedIn(true)
+            handleSubmit(true)
         }
     }
 
     return (
-        <div>
+        <div className="form--div">
             <form>
-                <label>Email Address</label>
+                <label>Email Address: </label>
+                <br/>
                 <input 
                 type="email" 
                 name="email" 
                 value={email} 
                 onChange={handleEmailChange}/>
+                <br/>
 
-                <label>Password:</label>
+                <label>Password: </label>
+                <br/>
                 <input 
                 type="password" 
                 name="pswd" 
@@ -40,6 +42,7 @@ export default function LoginForm() {
                 <input 
                 type="submit" 
                 value="Login" 
+                className="mainButton"
                 onClick={handleLogin}/>
             </form>
         </div>

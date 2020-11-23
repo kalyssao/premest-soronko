@@ -1,7 +1,7 @@
 .homeDiv {
     margin: 0 auto;
     width: 75%;
-    padding: 5%
+    padding: 5%;
 }
 
 label {
@@ -43,6 +43,15 @@ textarea {
 .dislike {
     color: red;
 }
+
+.edit--button {
+    background-color: green;
+}
+
+.delete--button {
+    background-color: red;
+}
+
 
 ul {
     padding: 0;

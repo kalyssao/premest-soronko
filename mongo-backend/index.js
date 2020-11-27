@@ -1,0 +1,23 @@
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+require('dotenv').config()
+
+const config = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}
+
+app.use(express.json())
+
+mongoose.connect(process.env.MONGO_DB_URI, config)
+.then(() => {
+    console.log('Successful connection!')
+})
+.catch((err) => {
+    console.log(err)
+})
+
+app.listen(5000, () => {
+    console.log('listening on port', 5000)
+})

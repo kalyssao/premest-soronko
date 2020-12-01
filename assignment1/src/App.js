@@ -1,14 +1,25 @@
-import './App.css';
-import LoginForm from './LoginForm'
-import SignUpForm from './SignUpForm'
+import LoginForm from './components/LoginForm'
 import Home from './views/Home'
+import { useState } from 'react'
 
 function App() {
-  return (
-    <div className="App">
-      <Home/>
-    </div>
-  );
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    
+    const handleSubmit = (bool) => {
+        setIsLoggedIn(bool)
+    }
+
+    return (
+        <div className="App">
+            {
+                isLoggedIn
+                ? <>
+                <Home/>
+                </>
+                : <LoginForm handleSubmit={handleSubmit}/>
+            }
+        </div>
+    );
 }
 
 export default App;

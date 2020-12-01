@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import NewPost from '../components/NewPost'
 import AllPosts from '../components/AllPosts'
+import Logout from '../components/Logout'
 import {v1 as uuid} from 'uuid'
 import '../styles/posts.css'
 
@@ -8,6 +9,7 @@ export default function Home() {
     const [ title , setTitle] = useState('')
     const [ content , setContent] = useState('')
     const [ posts, setPosts ] = useState([])
+    const [isLoggedIn, setIsLoggedIn] = useState(true)
 
     const handlePost = (title, content) => {
         setPosts([
@@ -24,7 +26,6 @@ export default function Home() {
     }
 
     const handleChange = (e) => {
-        console.log(e.target)
         switch (e.target.name) {
             case "title":
                 setTitle(e.target.value)
@@ -36,10 +37,20 @@ export default function Home() {
         }
     }
 
+    const handleLogOut = () => {
+        console.log('logged out')
+        setIsLoggedIn(true)
+    }
+
     return (
+        <>
+        <Logout handleLogout={handleLogOut}/>
         <div className="homeDiv">
+            {/*<Post post={{title: "helloworld", content: 'some blog post'}}/>
+            */}
             <NewPost title={title} content={content} handlePost={handlePost} handleChange={handleChange} />
             <AllPosts posts={posts}/>
         </div>
+        </>
     )
 }

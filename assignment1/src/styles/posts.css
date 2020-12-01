@@ -4,12 +4,20 @@
     padding: 5%;
 }
 
+.form--div {
+    margin: 0 auto;
+    width: 75%;
+    padding: 5%;
+}
+
 label {
     margin-bottom: 10%;
 }
 
 input {
+    margin-top: 10px;
     width: 80%;
+    margin-bottom: 10px;
 }
 
 textarea {
@@ -19,17 +27,13 @@ textarea {
     resize: none;
 }
 
-.postButton {
+.mainButton {
     padding: 15px 20px;
     font-size: 16px;
     margin-top: 10px;
     border: none;
     color: black;
     background-color: #D3D3D3;
-}
-
-.titleInput {
-    margin-top: 10px;
 }
 
 .sentiment-container {

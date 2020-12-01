@@ -29,7 +29,7 @@ export default function NewPost({ title, content, handlePost, handleChange }) {
                 placeholder="Enter your post here"
                 onChange={(e) =>  handleChange(e)}/>
                 <br/>
-                <button className="postButton">Post Blog!</button>
+                <button className="mainButton">Post Blog!</button>
             </form>
         </div>
     )

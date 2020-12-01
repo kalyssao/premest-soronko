@@ -30,6 +30,8 @@ export default function Post({ post }) {
                 : post.content
             }
             <p>Posted on {date} by Kalyssa A. Owusu</p>
+            {/*<button className="edit--button">Edit</button>
+            <button className="delete--button">Delete</button>*/}
             <LikeDislike />
             <EditDelete />
         </div>

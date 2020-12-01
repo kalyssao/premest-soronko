@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+## Assignment Prompt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Build an app that displays the weather and has Login functionality. Show the weather of the current country on the home page (this should show whether or not the user is logged in). Search for weather in a specific city. On user login, save last 5 searches and display results for last five searches on logged in user screen
+
+Free weather API:
+https://restcountries.eu
+https://weatherstack.com
 
 ## Available Scripts
 

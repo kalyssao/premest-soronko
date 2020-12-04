@@ -1,5 +1,6 @@
 const userRouter = require('express').Router()
 const User = require('../models/user')
+// bcrypt allows you to hash a password
 const bcrypt = require('bcrypt')
 
 // Signing up

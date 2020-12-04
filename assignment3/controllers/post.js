@@ -1,5 +1,4 @@
 const postRouter = require('express').Router()
-const { response } = require('express')
 const Post = require('../models/post')
 
 // Get all posts

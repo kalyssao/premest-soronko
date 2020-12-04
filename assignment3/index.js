@@ -3,6 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 
 const postRouter = require('./models/post')
+const userRouter = require('./models/user')
 require('dotenv').config()
 
 app.use(express.json())
@@ -34,14 +35,15 @@ app.post('/login', (req, res) => {
     }
 })
 
-// Post endpoints
-app.use('/posts', postRouter)
-
-
 // Update blog post
 app.put('posts/:id', (req, res) => {
 
 })
+
+
+// Post endpoints
+app.use('/posts', postRouter)
+app.use('/users', userRouter)
 
 app.listen(6000, () => {
     console.log('Listening on port', 6000)

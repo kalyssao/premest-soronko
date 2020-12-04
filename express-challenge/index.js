@@ -8,9 +8,8 @@ app.get('/users', (req, res) => {
     res.send(userData)
 })
 
-app.get('/users/:id', (req, res) => {
-    let id = req.params.id
-    res.send(userData[id])
+app.get('/users/:userId', (req, res) => {
+    res.send(userData[req.params.userId])
 })
 
 app.post('/users/add', (req, res) => {

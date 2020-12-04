@@ -19,6 +19,9 @@ postRouter.get('/:author', (request, response, next) => {
 })
 
 // Get post based on parameter
+postRouter.get('/', (request, response, next) => {
+    
+})
 
 // Add new post
 postRouter.post('/', async (request, response, next) => {
@@ -46,6 +49,9 @@ postRouter.post('/', async (request, response, next) => {
 })
 
 // Update a post (content & number of votes)
+postRouter.put('/:id', (request, response, next) => {
+
+})
 
 // Delete a post
 postRouter.delete('/:id', (request, response, next) => {

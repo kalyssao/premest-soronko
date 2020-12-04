@@ -35,12 +35,6 @@ app.post('/login', (req, res) => {
     }
 })
 
-// Update blog post
-app.put('posts/:id', (req, res) => {
-
-})
-
-
 // Post endpoints
 app.use('/posts', postRouter)
 app.use('/users', userRouter)

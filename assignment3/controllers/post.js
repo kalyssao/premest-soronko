@@ -34,7 +34,9 @@ postRouter.post('/', async (request, response, next) => {
             title: title,
             content: content,
             author: author,
-            date: date
+            date: date,
+            upvotes: 0,
+            downvotes: 0
         })
         newPost.save()
         .then( res => {

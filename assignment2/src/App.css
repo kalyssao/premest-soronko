@@ -19,6 +19,10 @@ h2 {
     text-align: center;
 }
 
+.header-container {
+    width: 350px;
+}
+
 .container {
   margin: 30px auto;
   width: 350px;
@@ -33,11 +37,16 @@ h2 {
     display: block;
 }
 
+.weather-list {
+    padding-top: 60px;
+}
+
 .weather-container {
     margin: 10px 0 30px;
     width: 100%;
     display: block;
-    background-color: #9c88ff;
+    background-color: #d7d0fb;
+    padding: 15px;
 }
 
 .btn {

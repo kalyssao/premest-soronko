@@ -17,6 +17,7 @@ export default function Weather() {
       .then((res) => {
         console.log(res.data);
         setWeather(...weather, res.data);
+        console.log(weather)
       })
       .catch((err) => {
         console.log(err.info);
@@ -30,11 +31,18 @@ export default function Weather() {
       <input value={query} onChange={handleInput}></input>
       <button onClick={handleSearch}>Search!</button>
 
-      {/* <h2>Result</h2>
-      <p>City</p>{weather.request.query}
-      <p>Temperature</p> {weather.current.temperature}
-      <p>Humidity</p>{weather.current.humidity}
-      <p>Description</p>{weather.current.weather_descriptions[0]} */}
+      <h2>Result</h2>
+      {
+          weather
+          && weather.length > 0
+          ? <>
+            <p>City</p>{weather.request.query}
+            <p>Temperature</p> {weather.current.temperature}
+            <p>Humidity</p>{weather.current.humidity}
+            <p>Description</p>{weather.current.weather_descriptions[0]} 
+          </>
+          : <></>
+      }
       
     </div>
   );

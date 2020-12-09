@@ -13,13 +13,19 @@ export default function Header() {
             // setTemperature(res.data.current.temperature)
             // setDescription(res.data.current.weather_descriptions[0])
         })
-    },[weather])
+    },[])
     
     return (
-        <div>
-            <h2>{weather.temperature}
-                {/* Current weather in Accra, Ghana is {description} at {temperature} degree celsius */}
-            </h2>
+        <div className="header-container">
+            <h2>Weather App</h2>
+            <h3 style={{textAlign: "center"}}>{ weather && Object.keys(weather).length === 0
+                    ?
+                        <></>
+                    : <div>
+                    Current weather in Accra, Ghana is {weather.weather_descriptions[0]} at {weather.temperature} degree celsius 
+                    </div>
+                }
+            </h3>
         </div>
     )
 }

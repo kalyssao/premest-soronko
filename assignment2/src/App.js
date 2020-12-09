@@ -51,7 +51,7 @@ function App() {
                         <WeatherList results={results}/>
                         
                     </>:<></>}
-                    <button className="btn" onClick={handleLogOut} style={{marginTop: "50px"}}>Log Out</button>
+                    <button className="btn" onClick={handleLogOut} style={{marginTop: "75px"}}>Log Out</button>
                 </>
                 : <><button className="btn" onClick={handleLogIn}>Log In</button></>
             }

@@ -1,6 +1,7 @@
 const express = require('express')
 const authorRouter = express.Router()
 const authorData = require('../authors.json')
+const authentication = require('../authentication')
 
 authorRouter.get('/', (request, response) => {
     const authors = new Array()
@@ -10,7 +11,8 @@ authorRouter.get('/', (request, response) => {
     response.status(200).send(authors)
 })
 
-authorRouter.post('/', (request, response) => {
+// Protected route - check for token
+authorRouter.post('/', authentication.authenticateToken, (request, response) => {
     const newAuthor = request.body.author
     authorData.push(newAuthor)
     response.status(200).send(newAuthor)
@@ -34,9 +36,10 @@ authorRouter.get('/:authorId/books', (request, response) => {
     }
 })
 
-authorRouter.delete('/:authorId', (request, response) => {
+// Protected route - check for token
+authorRouter.delete('/:authorId', authentication.authenticateToken, (request, response) => {
     let idToDelete = request.params.authorId
-    
+
 })
 
 module.exports = authorRouter

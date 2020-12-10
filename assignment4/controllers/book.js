@@ -1,12 +1,14 @@
 const express = require('express')
 const bookRouter = express.Router()
 const bookData = require('../books.json')
+const authentication = require('../authentication')
 
 bookRouter.get('/', (request, response) => {
     response.send(bookData)
 })
 
-bookRouter.post('/', (request, response) => {
+// Protected route - check for token
+bookRouter.post('/', authentication.authenticateToken, (request, response) => {
     const newBook = request.body.book
     bookData.push(newBook)
     response.status(200).send('Added book successfully')
@@ -18,7 +20,8 @@ bookRouter.get('/:bookId', (request, response) => {
     
 })
 
-bookRouter.delete('/:bookId', (request, response) => {
+// Protected route - check for token
+bookRouter.delete('/:bookId', authentication.authenticateToken, (request, response) => {
     const bookId = request.params.bookId
 
 })

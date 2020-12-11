@@ -7,6 +7,10 @@ const userRouter = require('./models/user')
 require('dotenv').config()
 
 app.use(express.json())
+// Post & users endpoints
+app.use('/posts', postRouter)
+app.use('/users', userRouter)
+
 
 const config = {
     useNewUrlParser: true,
@@ -34,10 +38,6 @@ app.post('/login', (req, res) => {
         res.status(400).send('wrong username or password')
     }
 })
-
-// Post endpoints
-app.use('/posts', postRouter)
-app.use('/users', userRouter)
 
 app.listen(6000, () => {
     console.log('Listening on port', 6000)

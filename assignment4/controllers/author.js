@@ -1,7 +1,7 @@
 const express = require('express')
 const authorRouter = express.Router()
 const authorData = require('../authors.json')
-const authentication = require('../authentication')
+const authentication = require('../middleware/auth')
 
 authorRouter.get('/', (request, response) => {
     const authors = new Array()
@@ -11,7 +11,7 @@ authorRouter.get('/', (request, response) => {
     response.status(200).send(authors)
 })
 
-// Protected route - check for token
+// Protected route - check for token using middleware
 authorRouter.post('/', authentication.authenticateToken, (request, response) => {
     const newAuthor = request.body.author
     authorData.push(newAuthor)

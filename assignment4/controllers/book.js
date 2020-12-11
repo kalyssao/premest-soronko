@@ -1,7 +1,7 @@
 const express = require('express')
 const bookRouter = express.Router()
 const bookData = require('../books.json')
-const authentication = require('../authentication')
+const authentication = require('../middleware/auth')
 
 bookRouter.get('/', (request, response) => {
     response.send(bookData)
